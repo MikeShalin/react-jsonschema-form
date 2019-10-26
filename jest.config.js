@@ -18,6 +18,7 @@ module.exports = {
   testURL: 'http://localhost',
   moduleNameMapper: {
     '^features(.*)$': '<rootDir>/src/features$1',
+    '^styles(.*)$': '<rootDir>/src/styles$1'
   },
   setupFiles: [
     '<rootDir>/config/testSetup.js',

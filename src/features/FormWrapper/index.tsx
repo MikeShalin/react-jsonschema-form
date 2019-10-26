@@ -1,5 +1,16 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-type TProps = {}
+import styled from 'styled-components'
 
-export const FormWrapper = ({}: TProps) => null
+type TProps = {
+  children: ReactNode,
+}
+
+const Form = styled.div`
+  width: 50%;
+  min-height: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+`
+
+export const FormWrapper = ({ children }: TProps) => <Form>{children}</Form>

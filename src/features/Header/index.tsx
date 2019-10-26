@@ -2,7 +2,9 @@ import React from 'react'
 
 import styled from 'styled-components'
 
-type TProps = {}
+type TProps = {
+  children: string
+}
 
 const Legend = styled.legend`
   display: block;
@@ -16,6 +18,6 @@ const Legend = styled.legend`
   border-bottom: 1px solid #e5e5e5;
 `
 
-export const Header = ({}: TProps) => (
-  <Legend>A registration form</Legend>
+export const Header = ({ children }: TProps) => (
+  <Legend>{children}</Legend>
 )

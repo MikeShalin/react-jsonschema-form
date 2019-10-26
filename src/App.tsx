@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { FormWrapper } from 'features/FormWrapper'
+import { Form } from 'features/Form'
+
+const schema = {
+  title: "A registration form",
+  description: "A simple form example.",
+  type: "object",
+  required: [
+    "firstName",
+    "lastName",
+  ],
+  properties: {
+    firstName: {
+      type: "string",
+      title: "First name",
+      default: "Chuck"
+    },
+    lastName: {
+      type: "string",
+      title: "Last name"
+    },
+  }
 }
 
-export default App;
+
+const App: React.FC = () => (
+  <FormWrapper>
+    <Form schema={schema}/>
+  </FormWrapper>
+)
+
+export default App
